@@ -198,18 +198,18 @@ public class Biblioteca extends JPanel {
 
     private void mostrarLivrosDisponiveis() {
 
-        String mensagem = "";
+        String livros = "";
         for (Livro l : livro) {
 
             if (l.getDisponivel()) {
-                mensagem += String.format("Título: %s\nAutor: %s\nAno: %d\n\n",l.getTitulo(), l.getAutor(), l.getAnoPublicacao());
+                livros += String.format("Título: %s\nAutor: %s\nAno: %d\n\n",l.getTitulo(), l.getAutor(), l.getAnoPublicacao());
           }
         }
 
         if (mensagem.isEmpty()) {
            JOptionPane.showMessageDialog(null, "Nenhum livro disponível");
         } else {
-            JOptionPane.showMessageDialog(null, mensagem); 
+            JOptionPane.showMessageDialog(null, livros); 
         }
          
     }
