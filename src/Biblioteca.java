@@ -206,7 +206,7 @@ public class Biblioteca extends JPanel {
           }
         }
 
-        if (mensagem.isEmpty()) {
+        if (livros.isEmpty()) {
            JOptionPane.showMessageDialog(null, "Nenhum livro disponível");
         } else {
             JOptionPane.showMessageDialog(null, livros); 
