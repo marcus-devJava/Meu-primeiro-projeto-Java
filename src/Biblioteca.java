@@ -181,7 +181,13 @@ public class Biblioteca extends JPanel {
 
             String titulo = JOptionPane.showInputDialog("Título:");
             String autor = JOptionPane.showInputDialog("Autor:");
-            int ano = Integer.parseInt(JOptionPane.showInputDialog("Ano:"));
+            int ano;
+            try {
+                ano = Integer.parseInt(JOptionPane.showInputDialog("Ano:"));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Digite um número válido.");
+                return;
+            }
 
             Livro livros = new Livro(titulo, autor, ano, true);
             livro.add(livros);
@@ -202,7 +208,9 @@ public class Biblioteca extends JPanel {
 
         if (mensagem.isEmpty()) {
            JOptionPane.showMessageDialog(null, "Nenhum livro disponível");
-        } 
+        } else {
+            JOptionPane.showMessageDialog(null, mensagem); 
+        }
          
     }
 
