@@ -240,6 +240,7 @@ public class Biblioteca extends JPanel {
         }
          
         JOptionPane.showMessageDialog(null, "Livro não encontrado.");
+        mostrarLivrosDisponiveis();
     }
 
     private void devolverLivro() {
