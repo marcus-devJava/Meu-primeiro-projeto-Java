@@ -136,12 +136,11 @@ public class Biblioteca extends JPanel {
         
     }
 
+ private boolean encontrado = false;
  private void login() {
 
         String email = campoEmail.getText();
         String senha = new String(campoSenha.getPassword());
-
-        boolean encontrado = false;
 
         for (Usuario u : usuario) {
            
@@ -162,6 +161,12 @@ public class Biblioteca extends JPanel {
     }
 
     private void adicionarLivros() {
+        
+        if (!encontrado) {
+        JOptionPane.showMessageDialog(null, "Faça login.");
+        return;
+    }
+        
         int quantidade;
            try {
             quantidade = Integer.parseInt(campoQuantidade.getText());
@@ -201,6 +206,11 @@ public class Biblioteca extends JPanel {
 
     private void emprestarLivro() {
 
+        if (!encontrado) {
+        JOptionPane.showMessageDialog(null, "Faça login.");
+        return;
+    }
+        
         String titulo = campoEscolha.getText();
 
         if(titulo.isEmpty()) {
@@ -224,6 +234,11 @@ public class Biblioteca extends JPanel {
 
     private void devolverLivro() {
 
+        if (!encontrado) {
+        JOptionPane.showMessageDialog(null, "Faça login.");
+        return;
+    }
+        
         String titulo = campoDevolver.getText();
 
         if(titulo.isEmpty()) {
