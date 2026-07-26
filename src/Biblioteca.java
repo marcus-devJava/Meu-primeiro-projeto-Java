@@ -142,6 +142,8 @@ public class Biblioteca extends JPanel {
         String email = campoEmail.getText();
         String senha = new String(campoSenha.getPassword());
 
+      encontrado = false;  
+     
         for (Usuario u : usuario) {
            
          if (email.equals(u.getGmail()) && senha.equals(u.getSenha())) {
